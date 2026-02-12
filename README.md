@@ -10,15 +10,14 @@ To build and deploy a machine learning application capable of classifying [inser
 
 ## c. Models Used & Comparison
 
-| ML Model Name          | Accuracy | AUC    | Precision | Recall | F1 Score | MCC    |
-|------------------------|----------|--------|-----------|--------|----------|--------|
-| Logistic Regression    | 0.9825   | 0.9980 | 0.9826    | 0.9825 | 0.9825   | 0.9622 |
-| Decision Tree          | 0.9386   | 0.9351 | 0.9386    | 0.9386 | 0.9386   | 0.8674 |
-| kNN                    | 0.9649   | 0.9920 | 0.9654    | 0.9649 | 0.9648   | 0.9242 |
-| Naive Bayes            | 0.9561   | 0.9960 | 0.9563    | 0.9561 | 0.9562   | 0.9056 |
-| Random Forest          | 0.9649   | 0.9950 | 0.9652    | 0.9649 | 0.9649   | 0.9245 |
-| XGBoost                | 0.9737   | 0.9945 | 0.9739    | 0.9737 | 0.9737   | 0.9436 |
-*(Note: Replace the values above with the actual output from your train_models.py script)*
+| ML Model Name       |   Accuracy |    AUC |   Precision |   Recall |   F1 Score |    MCC |
+|:--------------------|-----------:|-------:|------------:|---------:|-----------:|-------:|
+| Logistic Regression |     0.8044 | 0.8842 |      0.8055 |   0.8044 |     0.8039 | 0.6087 |
+| Decision Tree       |     0.7823 | 0.7816 |      0.7823 |   0.7823 |     0.7822 | 0.5637 |
+| kNN                 |     0.7447 | 0.8165 |      0.7453 |   0.7447 |     0.744  | 0.4884 |
+| Naive Bayes         |     0.7005 | 0.7865 |      0.7055 |   0.7005 |     0.6967 | 0.4027 |
+| Random Forest       |     0.8462 | 0.9159 |      0.8473 |   0.8462 |     0.8463 | 0.6934 |
+| XGBoost             |     0.86   | 0.9229 |      0.8606 |   0.86   |     0.86   | 0.7203 |
 
 ## Observations
 | ML Model Name       | Observation about model performance |
