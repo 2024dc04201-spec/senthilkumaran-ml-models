@@ -47,8 +47,14 @@ model = XGBClassifier(
 # y = pd.Series(data.target)
 
 # Option B: Load from CSV (Uncomment below if using a Kaggle CSV)
-df = pd.read_csv('C:/Users/Senkumaran/OneDrive/Documents/Senkumaran/BITS/Semester2/ML/Assignment/Assignment2/bank.csv')  
-print(df.columns)
+# df = pd.read_csv('C:/Users/Senkumaran/OneDrive/Documents/Senkumaran/BITS/Semester2/ML/Assignment/Assignment2/bank.csv')  
+# print(df.columns)
+
+base_path = os.getcwd()  # Gets the current working directory
+print(base_path)
+
+csv_path = os.path.join(base_path, "bank.csv")
+df = pd.read_csv(csv_path)
 
 month_map = {
     'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4,
@@ -139,7 +145,7 @@ print("Training set shape:", X_train_scaled.shape)
 print("Test set shape:", X_test_scaled.shape)
 
 
-# In[6]:
+# In[4]:
 
 
 # Save the scaler for later use in the app
@@ -211,16 +217,13 @@ for name, model in models.items():
 # STEP 5: OUTPUT RESULTS FOR README
 # ---------------------------------------------------------
 results_df = pd.DataFrame(results)
-print("\n" + "="*50)
-print("COMPARISON TABLE (Copy this to your README.md)")
-print("="*50 + '\n')
+print("\n" + "="*18)
+print("COMPARISON TABLE")
+print("="*18 + '\n')
 print(results_df.to_markdown(index=False))
 
 print("\nModels saved successfully in 'model/' folder.")
 
 
 # In[ ]:
-
-
-
 
