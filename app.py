@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[35]:
+# In[36]:
 
 
 # app.py - working version
@@ -38,9 +38,11 @@ st.markdown("""
 @st.cache_resource
 def load_assets(model_name):
     # Get the directory where app.py is located
+
+    lower_model_name = model_name.lower()
     base_path = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
     
-    model_path = os.path.join(base_path, "model", f"{model_name}.pkl")
+    model_path = os.path.join(base_path, "model", f"{lower_model_name}.pkl")
     scaler_path = os.path.join(base_path, "model", "scaler.pkl")
     
     if os.path.exists(model_path) and os.path.exists(scaler_path):
@@ -182,5 +184,4 @@ if uploaded_file is not None:
 
 
 # In[ ]:
-
 
