@@ -9,7 +9,7 @@ Develop a high-performance classification model to identify potential customers.
 ## b. Dataset Description
 * **Source:** [Insert Source, e.g., Kaagle Machine Learning Repository]
 * **Description:** The dataset contains [number] instances and [number] attributes.
-* **Target Variable:** Binary classification (0 = Benign, 1 = Malignant).
+
 
 ## c. Models Used & Comparison
 
