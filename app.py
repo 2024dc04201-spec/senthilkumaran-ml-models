@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[33]:
+# In[35]:
 
 
 # app.py - working version
@@ -25,14 +25,29 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # --- CACHING FOR PERFORMANCE ---
+# @st.cache_resource
+# def load_assets(model_name):
+#     """Loads model and scaler once and caches them."""
+#     model_path = f"model/{model_name}.pkl"
+#     scaler_path = 'model/scaler.pkl'
+    
+#     if os.path.exists(model_path) and os.path.exists(scaler_path):
+#         return joblib.load(model_path), joblib.load(scaler_path)
+#     return None, None
+
 @st.cache_resource
 def load_assets(model_name):
-    """Loads model and scaler once and caches them."""
-    model_path = f"model/{model_name}.pkl"
-    scaler_path = 'model/scaler.pkl'
+    # Get the directory where app.py is located
+    base_path = os.path.dirname(__file__) if "__file__" in locals() else os.getcwd()
+    
+    model_path = os.path.join(base_path, "model", f"{model_name}.pkl")
+    scaler_path = os.path.join(base_path, "model", "scaler.pkl")
     
     if os.path.exists(model_path) and os.path.exists(scaler_path):
         return joblib.load(model_path), joblib.load(scaler_path)
+    
+    # Debugging info if it fails
+    print(f"Failed to find: {model_path} or {scaler_path}")
     return None, None
 
 # --- SIDEBAR ---
@@ -167,3 +182,5 @@ if uploaded_file is not None:
 
 
 # In[ ]:
+
+
