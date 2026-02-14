@@ -139,7 +139,7 @@ print("Training set shape:", X_train_scaled.shape)
 print("Test set shape:", X_test_scaled.shape)
 
 
-# In[4]:
+# In[6]:
 
 
 # Save the scaler for later use in the app
@@ -148,7 +148,9 @@ joblib.dump(scaler, 'model/scaler.pkl')
 # Save X_test and y_test to a CSV for you to upload to Streamlit later
 test_data = X_test.copy()
 test_data['target'] = y_test
-test_data.to_csv("test_data_sample.csv", index=False)
+test_data.to_csv("test_data_sample.csv", index=False, sep=',', encoding='utf-8')
+# data.to_csv("test_data_sample_fixed.csv", index=False, sep=',', encoding='utf-8')
+
 print("Test data saved as 'test_data_sample.csv'. Use this to test your Streamlit App.")
 
 
