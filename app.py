@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[33]:
+
+
 # app.py - working version
 import streamlit as st
 import pandas as pd
@@ -158,3 +164,6 @@ if uploaded_file is not None:
     except ValueError as e:
         st.error(f"Prediction Error: {e}")
         st.info("Check if your test CSV matches the training feature set.")
+
+
+# In[ ]:
